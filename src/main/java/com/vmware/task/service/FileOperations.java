@@ -8,5 +8,5 @@ import java.util.List;
 public interface FileOperations {
     void write(Task t) throws IOException;
 
-    List<String> read(String uuid);
+    String read(String uuid);
 }

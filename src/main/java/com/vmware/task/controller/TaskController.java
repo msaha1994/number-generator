@@ -56,16 +56,27 @@ public class TaskController {
                 g.setResult(t.getStatus().name());
                 return ResponseEntity.status(HttpStatus.ACCEPTED).body(g);
             } else {
+                g.setResult("Not Found");
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(g);
             }
         } catch (Exception e) {
             //Log here
+            g.setResult("Not Found");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(g);
         }
     }
 
     @GetMapping("tasks/{UUID_task}")
-    public List<String> getContent(@PathVariable("UUID_task") String uuidTask, @RequestParam String action) {
-        return taskServiceImpl.getNumList(uuidTask);
+    public ResponseEntity<GenericResponse> getContent(@PathVariable("UUID_task") String uuidTask, @RequestParam String action) {
+        GenericResponse g = new GenericResponse();
+        try {
+            g.setResult(taskServiceImpl.getNumList(uuidTask));
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(g);
+        } catch (Exception e) {
+            //Log here
+            e.printStackTrace();
+            g.setResult("Not Found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(g);
+        }
     }
 }

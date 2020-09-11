@@ -7,5 +7,5 @@ import java.util.List;
 public interface TaskService {
     Task getTaskStatus(String taskUUID);
 
-    List<String> getNumList(String taskUUID);
+    String getNumList(String taskUUID);
 }

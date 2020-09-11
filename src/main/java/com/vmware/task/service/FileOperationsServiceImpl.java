@@ -50,17 +50,17 @@ public class FileOperationsServiceImpl implements FileOperations {
     }
 
     @Override
-    public List<String> read(String uuid) {
-
+    public String read(String uuid) {
         String fileName = folderLocation + uuid + ".txt";
-        List<String> list = new ArrayList<>();
+        List<String> list;
         try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
             //br returns as stream and convert it into a List
             list = br.lines().collect(Collectors.toList());
-
         } catch (IOException e) {
+            //Log here
             e.printStackTrace();
+            throw new RuntimeException("Problem with file");
         }
-        return list;
+        return list.toString();
     }
 }

@@ -27,7 +27,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<String> getNumList(String taskUUID) {
+    public String getNumList(String taskUUID) {
         return fileOperations.read(taskUUID);
     }
 }
