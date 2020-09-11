@@ -13,14 +13,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service("fileOperator")
 public class FileOperationsServiceImpl implements FileOperations {
 
-    @Value("${home.folder}")
+    @Value("${folder.path}")
     private String folderLocation;
 
     @Autowired

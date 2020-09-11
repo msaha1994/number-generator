@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @Service("taskExecutor")
 public class TaskExecutorServiceImpl implements TaskExecutor {
-    @Value("${home.folder}")
+    @Value("${folder.path}")
     private String folderLocation;
 
     @Autowired
