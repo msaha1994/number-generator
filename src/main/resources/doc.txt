@@ -1,0 +1,33 @@
+1. What is the Default Gateway in IP?
+
+Ans-
+A default gateway is the node in a computer network using the internet protocol suite that serves as the forwarding host (router) to other networks when no other route specification matches the destination IP address of a packet.
+
+2. Explain the concepts of SNAT and DNAT
+
+Ans-
+
+Network Address Translation (NAT) occurs when one of the IP addresses in an IP packet header is changed.
+In a SNAT, the destination IP address is maintained and the source IP address is changed.
+Most commonly, a SNAT allows a host on the “inside” of the NAT, in an RFC 1918 IP address space, to initiate a connection to a host on the “outside” of the NAT.
+A DNAT, by way of contrast, occurs when the destination address is changed and the source IP address is maintained. A DNAT allows a host on the “outside” to connect to a host on the “inside”.
+In both cases, the NAT has to maintain a connection table which tells the NAT where to route returning packets. An important difference between a SNAT and a DNAT is that a SNAT allows multiple hosts on the “inside” to get to any host on the “outside”.
+By way of contrast, a DNAT allows any host on the “outside” to get to a single host on the “inside”
+
+3.
+A.192.168.101.2/24
+B.192.168.101.3/24
+C.192.168.102.2/24
+D.192.168.102.3/24
+
+A,B,C,D are the IPs to be assigned to four computers ;
+network elements are need to arrive at the above network architecture and their configurations in terms at L3/L2
+Details of the IP assignments to be given to each node ;
+
+4. Explain ARP.
+
+Ans-
+Most of the computer programs/applications use logical address (IP address) to send/receive messages, however
+the actual communication happens over the physical address (MAC address) i.e from layer 2 of OSI model.
+So our mission is to get the destination MAC address which helps in communicating with other devices.
+This is where ARP comes into the picture, its functionality is to translate IP address to physical address.
