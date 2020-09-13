@@ -31,9 +31,9 @@ public class FileOperationsServiceImpl implements FileOperations {
         int goal = t.getGoal();
         int step = t.getStep();
         String buffer = "";
-        while (goal != 0) {
+        while (goal > -1) {
             int temp = step;
-            while (temp != 0 && goal != 0) {
+            while (temp != 0 && goal > -1) {
                 buffer = buffer + " " + goal;
                 temp--;
                 goal--;
